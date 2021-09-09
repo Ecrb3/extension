@@ -1,14 +1,14 @@
-const NORMAL_SPEED = 1;
+const NORMAL_SPEED = 2;
 
-onExtensionsInstalled(setInitial);
+onExtensionInstalled(setInitial);
 
-function setInitical(){
+function setInitial(){
     setInitialActive();
-    SetInitialSpeed();
+    setInitialSpeed();
 }
 
 async function setInitialActive(){
-    constactive = await getActive();
+    const active = await getActive();
     if (active == null) await setInitialActive(true);
 }
 async function setInitialSpeed(){
