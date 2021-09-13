@@ -6,9 +6,9 @@
      videos: null,
  };
 
- (function (){
-     activate();
- })();
+(function (){
+    activate();
+})();
 
  async function activate(){
      state.active = await getActive();
@@ -18,8 +18,6 @@
      getVideosAndSetSpeed();
      
      window.addEventListener('yt-navigate-finish', getVideosAndSetSpeed);
-
-
  }
 
  function getVideosAndSetSpeed(){
@@ -34,7 +32,7 @@
  function setAllVideosSpeed({resetToNormalSpeed = false} = {}){
     const speed = resetToNormalSpeed ? NORMAL_SPEED : state.speed;    
     for(video of state.videos){
-         setAllVideosSpeed(video, speed);
+         setVideoSpeed(video, speed);
      }
  }
 
